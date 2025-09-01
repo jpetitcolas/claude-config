@@ -15,9 +15,13 @@ Add this configuration to any existing project:
 
 ```bash
 # Add the claude-config as a subtree in your project
-git subtree add --prefix=.claude https://github.com/jpetitcolas/claude-config.git main --squash
+git subtree add --prefix=claude-config https://github.com/jpetitcolas/claude-config.git main --squash
 
-# Commit the addition
+# Create a symbolic link from claude-config to .claude for Claude Code to recognize it
+ln -s claude-config .claude
+
+# Commit both the subtree addition and the symbolic link
+git add .claude
 git commit -m "Add Claude configuration via subtree"
 ```
 
@@ -27,7 +31,7 @@ When this repository gets updates, sync them to your project:
 
 ```bash
 # Pull latest changes from claude-config
-git subtree pull --prefix=.claude https://github.com/jpetitcolas/claude-config.git main --squash
+git subtree pull --prefix=claude-config https://github.com/jpetitcolas/claude-config.git main --squash
 ```
 
 ### Why Subtrees?
