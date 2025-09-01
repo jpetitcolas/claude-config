@@ -11,36 +11,35 @@ Analyze recent work and conversations to identify improvements for CLAUDE.md gui
    - Identify patterns where the user had to clarify or correct behavior
    - Note repeated instructions or preferences
 
-3. **Extract improvements**
-   - Group findings by: behavioral patterns, technical preferences, workflow patterns, quality standards
-   - Categorize by frequency (how often it appeared) and impact (how significant)
-   - Determine appropriate scope (project-specific vs universal)
-
-4. **Present findings interactively**
-   Format each finding as:
-   ```
-   **[Category]: [Specific Finding]**
-   - Current: [What happens now]
-   - Desired: [What should happen]  
-   - Proposed guideline: "[Exact text to add]"
-   - Suggested level: [Current project / Parent / Global]
-   ```
-
-5. **For each improvement**
+3. **Extract and validate improvements individually**
+   - Identify patterns where the user had to clarify or correct behavior
+   - For each pattern found, immediately present it to the user for validation
+   - Format each finding as:
+     ```
+     **[Category]: [Specific Finding]**
+     - Current: [What happens now]
+     - Desired: [What should happen]  
+     - Proposed guideline: "[Exact text to add]"
+     - Suggested level: [Current project / Parent / Global]
+     ```
    - Ask: "Add this guideline to [suggested level] CLAUDE.md? (yes/no/modify)"
-   - If modify: ask for the preferred wording
-   - If yes: note for implementation
-   - Default to most logical placement based on scope
+   - If modify: ask for the preferred wording and apply immediately
+   - If yes: apply the change immediately to the appropriate CLAUDE.md file
+   - If no: move on to the next pattern
 
-6. **Apply approved changes**
-   - Update the appropriate CLAUDE.md files
-   - Maintain consistent formatting
-   - Preserve valuable existing guidelines
-   - Report what was added/modified
+4. **Process improvements as discovered**
+   - Work through patterns in order of importance/frequency
+   - Apply each approved change immediately before moving to the next
+   - Maintain consistent formatting with existing guidelines
+   - Report what was added after each successful addition
+
+5. **Completion summary**
+   - Provide a brief summary of all changes made
+   - Note any patterns that were identified but not implemented
 
 ## Output Format
 
-Start with 3-5 highest priority improvements, then group remaining by category. Include concrete examples from the conversation that led to each finding.
+Process improvements one at a time in order of importance/frequency. For each improvement, include concrete examples from the conversation that led to the finding, then immediately validate and apply if approved before moving to the next.
 
 ## Guidelines for Good Improvements
 

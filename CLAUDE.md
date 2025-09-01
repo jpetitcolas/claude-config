@@ -11,3 +11,8 @@ The repository follows a simple structure:
 ## Usage
 
 This configuration is designed to be portable across projects. The retrospective command can be used to refine project-specific CLAUDE.md files based on actual usage patterns and user feedback.
+
+## Guidelines
+
+### Workflow
+- Never automatically commit or push changes. Wait for explicit user request.
