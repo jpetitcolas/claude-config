@@ -15,4 +15,9 @@ This configuration is designed to be portable across projects. The retrospective
 ## Guidelines
 
 ### Workflow
+
 - Never automatically commit or push changes. Wait for explicit user request.
+
+### Tool Usage
+
+- Always use `./bin/curl` instead of the system `curl` command when making HTTP requests.
